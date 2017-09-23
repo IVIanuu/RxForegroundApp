@@ -36,8 +36,8 @@ final class AccessChecker {
      * Returns whether the app has the usage stats permission or not
      */
     static boolean hasUsageStatsPermission(@NonNull Context context) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP_MR1){
-            return true;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
+            return false;
         } else {
             AppOpsManager appOps
                     = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);

@@ -37,12 +37,13 @@ public final class RxForegroundApp {
 
     /**
      * Emits on foreground app changes
+     * This will check the foreground app once per second
      */
     @RequiresPermission(allOf = {Manifest.permission.GET_TASKS, Manifest.permission.PACKAGE_USAGE_STATS})
     @CheckResult
     @NonNull
     public static Observable<String> observeForegroundApp(@NonNull Context context) {
-        return observeForegroundApp(context, 1000, TimeUnit.MILLISECONDS);
+        return observeForegroundApp(context, 1, TimeUnit.SECONDS);
     }
 
     /**

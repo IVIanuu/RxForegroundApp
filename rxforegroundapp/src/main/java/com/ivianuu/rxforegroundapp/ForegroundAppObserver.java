@@ -27,7 +27,7 @@ import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Foreground app checker
+ * Foreground app observer which handles logic
  */
 final class ForegroundAppObserver {
 
