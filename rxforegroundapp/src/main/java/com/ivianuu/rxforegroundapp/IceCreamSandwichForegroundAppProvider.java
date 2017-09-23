@@ -42,9 +42,6 @@ final class IceCreamSandwichForegroundAppProvider implements ForegroundAppProvid
      */
     @NonNull
     static ForegroundAppProvider create(@NonNull Context context) {
-        if (!AccessChecker.hasGetTasksPermission(context)) {
-            throw new GetTasksPermissionMissingException();
-        }
         return new IceCreamSandwichForegroundAppProvider(
                 (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE), context.getPackageManager());
     }

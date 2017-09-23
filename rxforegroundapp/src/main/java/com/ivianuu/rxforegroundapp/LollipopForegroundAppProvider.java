@@ -41,9 +41,6 @@ final class LollipopForegroundAppProvider implements ForegroundAppProvider {
      */
     @NonNull
     static ForegroundAppProvider create(@NonNull Context context) {
-        if (!AccessChecker.hasUsageStatsPermission(context)) {
-            throw new MissingUsageStatsPermissionException();
-        }
         return new LollipopForegroundAppProvider(
                 (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE));
     }
